@@ -1,0 +1,169 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2015 Xavier Danaux (xdanaux@gmail.com), 2020-2024 moderncv maintainers (github.com/moderncv).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+\moderncvcolor{grey}                           % color options 'black', 'blue' (default), 'burgundy', 'green', 'grey', 'orange', 'purple' and 'red'; for contemporary style use 'cerulean'
+% moderncv themes
+\moderncvstyle[]{banking}                     % style options are 'casual' (default), 'classic', 'banking', 'oldstyle', 'fancy' and 'contemporary'
+                                                   % the 'contemporary' style optionally takes the `qr` (default) or `noqr` options
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+%\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% adjust the page margins
+\usepackage[hmargin=0.5in,vmargin=10pt]{geometry}                  % the 'contemporary' style looks better with reduced margins; uncomment the line below for increased margin
+%\usepackage[scale=0.75]{geometry}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvheadnamewidth}{10cm}            % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+%\setlength{\listitemsymbolspace}{10pt}            % set custom spacing between list symbol and text item (influences \cvlistitem and \cvlistdoubleitem)
+
+% the 'contemporary' style allows to append additional elements to the head background; uncomment and customize if needed
+%\def\@moderncvheadBackground{
+%}
+
+% font loading
+% for luatex and xetex, do not use inputenc and fontenc
+% see https://tex.stackexchange.com/a/496643
+\ifxetexorluatex
+  \usepackage{fontspec}
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX}
+  \setmainfont{Latin Modern Roman}
+  \setsansfont{Latin Modern Sans}
+  \setmonofont{Latin Modern Mono}
+  \setmathfont{Latin Modern Math}
+
+  % you may also consider Fira Sans Light for a extra modern look
+  %\setsansfont[ItalicFont={Fira Sans Light Italic},%
+  %           BoldFont={Fira Sans},%
+  %           BoldItalicFont={Fira Sans Italic}]%
+  %           {Fira Sans Light}%
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[T1]{fontenc}
+  \usepackage{lmodern}
+\fi
+
+% document language
+\usepackage[english]{babel}  % FIXME: using spanish breaks moderncv
+
+% personal data
+\name{Abraham}{White}
+% \title{Résumé title}                               % optional, remove / comment the line if not wanted
+% \born{4 July 1776}                                 % optional, remove / comment the line if not wanted
+% \address{street and number}{postcode city}{country}% optional, remove / comment the line if not wanted; the "postcode city" and "country" arguments can be omitted or provided empty
+\phone[mobile]{+1~(937)~979~3844}                   % optional, remove / comment the line if not wanted; the optional "type" of the phone can be "mobile" (default), "fixed" or "fax"
+% \phone[fixed]{+2~(345)~678~901}
+% \phone[fax]{+3~(456)~789~012}
+\email{abelincoln.white@gmail.com}                               % optional, remove / comment the line if not wanted
+% \homepage{www.johndoe.com}                         % optional, remove / comment the line if not wanted
+
+% Social icons
+\social[linkedin]{whiteabelincoln}                        % optional, remove / comment the line if not wanted
+\social[github]{whiteabelincoln}                              % optional, remove / comment the line if not wanted
+
+% \extrainfo{additional information}                 % optional, remove / comment the line if not wanted
+% \photo[64pt][2pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 2pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+% \quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% bibliography adjustments (only useful if you make citations in your resume, or print a list of publications using BibTeX)
+%   to show numerical labels in the bibliography (default is to show no labels)
+%\makeatletter\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}\makeatother
+\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}
+%   to redefine the bibliography heading string ("Publications")
+%\renewcommand{\refname}{Articles}
+
+% bibliography with multiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+
+\section{Education}  % for 'contemporary' style use optional argument for displaying an icon, e.g. \section[\faGraduationCap]{Education}
+\cventry{Aug 2015--Dec 2020}{BS Computer Science, Mathematics Minor}{Utah State
+  University}{Logan, UT}{}{}  % arguments 3 to 6 can be left empty
+
+\section{Experience}
+\cventry{Apr 2021--Present}{Software Engineer II}{Campbell Scientific,
+  Inc.}{Logan, UT}{}{Developed a cloud-based measurement observation
+  platform which will replace the countrywide observation network for the
+  Netherlands' meteorological agency (KNMI). Developed an Automated Weather
+  Observing System (AWOS/ASOS) platform, for use by the FAA \& NOAA in over 600
+  airports in the United States and other airports worldwide.\newline{}
+\textbf{Responsibilies included:}
+\begin{itemize}
+\item Collaborate with team and architects to create REST and
+  GraphQL backend APIs, written in Go
+\item Develop AWS-based Kubernetes infrastructure by creating Kong and KNative
+  API services and maintaining internal Helm charts
+\item Create a platform for user-created ``dashboards'', displaying live and historical
+  measurement data with various widgets.
+\item Implement weather algorithms and sensor drivers in C++, based on customer-provided specifications
+\item Create websocket RPC APIs to integrate a Vue frontend with a C++ backend
+\item Lead standup meetings and sprint reviews as a backup scrum master
+\end{itemize}
+\textbf{Notable achievements:}
+\begin{itemize}
+  \item Added our platform's first GraphQL-based API, used to subscribe to
+    incoming data events. Care was taken to ensure that clients of this
+    ``highly-available'' API received events even in the case of Kubernetes node
+    failure and that the API worked with existing KNative services and Kong
+    ingress.
+  \item Created a framework for creating VT-220 terminal UIs, used by our legacy
+    AWOS application. This framework used a delcarative component-based
+    architecture, similar to Vue or React, which lowered the barrier of entry
+    for our frontend developers.
+  \item Created a programmatic schema-driven UI for editing our application's
+    configuration. This allowed users to edit config using a web page with
+    real-time validation, an improvement over editing a yaml file and attempting
+    to run the app. Defining a configuration schema simplified parsing
+    \& validation in the C++ backend, and allowed sharing config with our
+    Typescript frontend.
+\end{itemize}}
+\cventry{Apr 2019--Apr 2021}{Self-Employed}{My Financial Foundations,
+  LLC}{Logan, UT}{}{
+  Contracted with My Financial Foundations, LLC to build their insurance and
+  financial services platform, consisting of:
+  \begin{itemize}
+    \item Client-facing forms and general insurance information
+    \item A system for insurance agents to track client progress, analyze data,
+      and generate PDF reports.
+    \item Editable content with NetlifyCMS, payment processing using Stripe, and
+      infrastructure through AWS (Amplify, Cognito, Lambda, and DynamoDB).
+  \end{itemize}
+}
+\cventry{Dec 2017--Apr 2091}{Senior Developer}{Shingo Institute}{Logan, UT}{}{
+  Developed and maintained an international event portal used by over 27
+  affiliate companies, and:
+  \begin{itemize}
+    \item Supported back-end API systems written in Node.js, cloud virtual
+      servers, and public web pages
+    \item Containerized microservices and web-applications using Docker
+    \item Wrote automated unit and integration tests to enable continuous
+      application deployment
+    \item Refactored a GRPC and microservices backend to a monolithic architecture
+    \item Mentored a junior developer through code reviews, standups, and training
+  \end{itemize}
+}
+
+\section{Computer skills}
+\cvdoubleitem{Web Tech}{Vue.js, React, HTML, CSS, SASS}
+{Databases}{PostgreSQL, MySQL, Redis, FoundationDB}
+\cvdoubleitem{Languages}{Typescript, C++, Golang, Python,
+  Rust}{DevOps and Tools}{K8s, Helm, Git, Linux, POSIX sh}
+% \cvtripleitem{category 4}{XYZ}{category 5}{XYZ}{category 6}{XYZ}
+
+\end{document}
+
+
+%% end of file `template.tex'.
